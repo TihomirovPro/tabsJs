@@ -1,0 +1,32 @@
+extends ../../layout/page
+
+//--------------------------------------------------//
+
+block vars
+  - var title = 'Вкладки JavaScript'
+  - var description = 'Вкладки JavaScript'
+  - var pageId = 'p-home'
+
+//--------------------------------------------------//
+
+block head
+
+block startBody
+ 
+block endBody
+  +script('tabsJs')
+
+//--------------------------------------------------//
+
+block content
+  .wrapper
+    h1.title Js Вкладки
+    +b.tabs
+      +e.nav.tabsNav-js
+        +e.link Вкладка 1
+        +e.link Вкладка 2
+        +e.link Вкладка 3
+      +e.container.tabs-js
+        +e.item Вкладка 1
+        +e.item Вкладка 2
+        +e.item Вкладка 3

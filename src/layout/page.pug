@@ -1,0 +1,25 @@
+//------------------------------//
+
+include bemto/bemto
+include mixins/head
+include mixins/style
+include mixins/script
+
+//------------------------------//
+
+- var lang = 'ru-RU'
+block vars
+
+doctype html
+html(lang=lang)
+  head
+    +head()
+    block head
+
+  body(class=pageId)
+    block startBody
+
+    main.content
+      block content
+
+    block endBody
