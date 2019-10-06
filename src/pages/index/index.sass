@@ -10,3 +10,14 @@
   margin: 0 auto
   &__nav
     +flex('between')
+
+  &__link
+    cursor: pointer
+    &.active
+      color: red
+  
+  &__item
+    display: none
+    &.active
+      display: block
+  

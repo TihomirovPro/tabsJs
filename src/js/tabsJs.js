@@ -1,32 +1,28 @@
 function tabsJs () {
-  const tabsNav = document.querySelectorAll('.tabsNav-js')
-  const tabs = document.querySelectorAll('.tabs-js')
+  const tabsWrap = document.querySelectorAll('.tabsWrapJs')
 
-  for (let i = 0; i < tabsNav.length; i++) {
-    for (let c = 0; c < tabs[i].childNodes.length; c++) {
-      if (c !== 0) {
-        tabs[i].childNodes[c].style.display = 'none'
-      }
-    }
+  tabsWrap.forEach(item => {
+    const tabsNav = item.querySelector('.tabsNavJs')
+    const tabsLinks = tabsNav.children
+    const tabs = item.querySelector('.tabsJs').children
 
-    tabsNav[i].childNodes[0].classList.add('active')
-    tabs[i].childNodes[0].classList.add('open')
+    tabsLinks[0].classList.add('active')
+    tabs[0].classList.add('active')
 
-    tabsNav[i].addEventListener('click', (e) => {
-      let target = e.target
-      let index = [].indexOf.call(tabsNav[i].children, target)
-
-      if (target !== e.currentTarget) {
-        tabsNav[i].querySelector('.active').classList.remove('active')
-        target.classList.add('active')
-
-        tabs[i].querySelector('.open').style.display = 'none'
-        tabs[i].querySelector('.open').classList.remove('open')
-        tabs[i].childNodes[index].style.display = 'block'
-        tabs[i].childNodes[index].classList.add('open')
+    tabsNav.addEventListener('click', function (e) {
+      const target = e.target
+      for (let i = 0; i < tabsLinks.length; i++) {
+        if(target != tabsNav) {
+          tabsLinks[i].classList.remove('active')
+          tabs[i].classList.remove('active')
+        }
+        if (target === tabsLinks[i]) {
+          tabsLinks[i].classList.add('active')
+          tabs[i].classList.add('active')
+        }
       }
     })
-  }
+  })
 }
 
 tabsJs()
