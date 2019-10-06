@@ -1,14 +1,12 @@
-# JavaScript Вкладки
+# Js Вкладки
 
-Добавить для контейнеров классы:
-	с ссылками - tabsNav-js
-	с вкладками - tabs-js
+Добавьте классы "tabsWrapJs" для основного контейнера, "tabsNavJs" для контейнера с заголовками вкладок, "tabsJs" для контейнера с вкладками:
 
-    <div>
-	    <div class="tabsNav-js">
-			//ссылки на вкладки...
-	    </div>
-	    <div class="tabs-js">
-		    //вкладки...
-	    </div>
+    <div class="tabsWrapJs">
+        <div class="tabsNavJs">
+            // Заголовки вкладок
+	</div>
+	<div class="tabsJs">
+	    // Вкладки
+	</div>
     </div>
