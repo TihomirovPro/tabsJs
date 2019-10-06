@@ -12,7 +12,7 @@ function tabsJs () {
     tabsNav.addEventListener('click', function (e) {
       const target = e.target
       for (let i = 0; i < tabsLinks.length; i++) {
-        if(target != tabsNav) {
+        if (target !== tabsNav) {
           tabsLinks[i].classList.remove('active')
           tabs[i].classList.remove('active')
         }
